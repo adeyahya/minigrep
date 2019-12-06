@@ -55,4 +55,18 @@ Pick three.";
             search(query, contents)
         )
     }
+
+    #[test]
+    fn no_result() {
+        let query = "i wish i can find it";
+        let contents = "\
+Rust
+safe, fast, productive.
+Pick three.";
+
+        assert_eq!(
+            vec![""; 0],
+            search(query, contents)
+        )
+    }
 }
